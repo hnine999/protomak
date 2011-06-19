@@ -4,7 +4,7 @@
 	ProtoMak Dev Team
 	---------------------
 
-Usages of XSD -> Proto
+XSD Schemas to Proto Definitions
 
 	Protomak can generate a proto file given an XSD file. 
 	The proto file can then be used by protoc (google protobuf) to generate an object for binary transfer.
@@ -12,21 +12,105 @@ Usages of XSD -> Proto
 	If you are unfamiliar with the proto language specification please refer to the {{{http://code.google.com/apis/protocolbuffers/docs/proto.html}language guide}}.
 
 
-XSD Namespace -> Proto package
-	
-	\<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.jemos.eu/one-simple-single-element" xmlns:tns="http://www.jemos.eu/one-simple-single-element" elementFormDefault="qualified"\>
-	
-	transencodes to:
-	 
-	package xmlschema.2001.org.w3.www
+Namespace to package
 
-XSD Element -> Proto message
++--------------------------------------------
+	<schema xmlns="http://www.w3.org/2001/XMLSchema"/>
++--------------------------------------------    
+
+	converts to:
+
++--------------------------------------------
+	package xmlschema.2001.org.w3.www
++--------------------------------------------
+
+Element to message
+
++--------------------------------------------	
+	<element name="Client" type="string"/>
++--------------------------------------------
+
+	converts to:
 	
-	\<element name="client" type="string"\>\</element\> 
-	
-    transencodes to:
-	
-	message Client \{
++--------------------------------------------	
+	message Client {
 		required string client = 1;
-	\}
+	}
++--------------------------------------------
 	
+Elements to messages
+
++--------------------------------------------
+	<element name="intElement" type="int"/>
+	<element name="booleanElement" type="boolean"/>
++--------------------------------------------
+
+	converts to:
+	
++--------------------------------------------	
+	message BooleanElement {
+		required bool booleanElement = 2;
+	}
+	
+	message IntElement {
+			required sfixed_32 intElement = 1;
+	}
++--------------------------------------------
+
+Enumerations to Enumerations
+
++--------------------------------------------
+    <element name="elementWithAnonymousType">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="A" />
+          <enumeration value="B" />
+          <enumeration value="C" />
+        </restriction>
+      </simpleType>
+    </element>
++--------------------------------------------
+ 
+    converts to:
+    
++--------------------------------------------
+    message ElementWithAnonymousType {
+		enum AnonymousEnum1 {
+			A = 1;
+			B = 2;
+			C = 3;
+		}
+		required AnonymousEnum1 elementWithAnonymousType = 1;
+	}
++--------------------------------------------
+
+Complex types to messages
+
++--------------------------------------------
+	<complexType name="PersonType">
+    	<sequence>
+    		<element name="firstName" type="string" minOccurs="0"/>
+    		<element name="lastName" type="string"/>
+    	</sequence>
+	</complexType>
+	<complexType name="UsePersonType">
+    	<sequence>
+    		<element name="person" type="tns:PersonType" minOccurs="1" maxOccurs="unbounded"/>
+    	</sequence>
+	</complexType>
++--------------------------------------------
+
+	converts to:
+
++--------------------------------------------
+	message PersonType {
+		optional string firstName = 1;
+		required string lastName = 2;
+	}
+	
+	message UsePersonType {
+		repeated PersonType person = 1;
+	}
++--------------------------------------------
+
+
