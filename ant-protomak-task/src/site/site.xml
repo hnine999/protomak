@@ -43,14 +43,9 @@
       </links>
       
       <menu name="Getting Started">
+        <item name="Overall Documentation" href="../index.html" />
       	<item name="Home" href="./index.html" />
-		<item name="Global Documentation" href="../protomak-parent/index.html" />
       </menu>
-      
-      <menu name="Protomak modules">
-      	<item name="Protomak Engine" href="protomak-engine/index.html" />
-      	<item name="Protomak Maven Plugin" href="maven-protomak-plugin/index.html" />
-      </menu> 
       
       <menu ref="reports" />
       
