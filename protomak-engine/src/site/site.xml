@@ -6,12 +6,6 @@
     
     <version position="left" />
     
-    <poweredBy>
-      <logo name="Jemos" img="images/logo.gif" 
-      		href="http://www.jemos.eu/projects/protomak/index.html"
-      		alt="Jemos protomak" />
-    </poweredBy>
-    
     <body>
       
       <links>     
