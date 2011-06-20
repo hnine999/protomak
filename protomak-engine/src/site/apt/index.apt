@@ -10,5 +10,109 @@ Protomak Engine
   The Protomak Engine component is in charge of transforming various integration technologies
   (such as XSDs, Jonas, etc) to .proto files. 
   
-  Currently the only supported technology is XML Schemas. To find out how Protomak Engine transforms
-  XSDs into proto files, please refer to the {{{./usage.html} Usage }} page.
+XSD Schemas to Proto Definitions
+	
+	If you are unfamiliar with the proto language specification please refer to 
+	the {{{http://code.google.com/apis/protocolbuffers/docs/proto.html}language guide}}.
+
+Namespace to package
+
++--------------------------------------------
+	<schema xmlns="http://www.w3.org/2001/XMLSchema"/>
++--------------------------------------------    
+
+	converts to:
+
++--------------------------------------------
+	package xmlschema.2001.org.w3.www
++--------------------------------------------
+
+Element to message
+
++--------------------------------------------	
+	<element name="Client" type="string"/>
++--------------------------------------------
+
+	converts to:
+	
++--------------------------------------------	
+	message Client {
+		required string client = 1;
+	}
++--------------------------------------------
+	
+Elements to messages
+
++--------------------------------------------
+	<element name="intElement" type="int"/>
+	<element name="booleanElement" type="boolean"/>
++--------------------------------------------
+
+	converts to:
+	
++--------------------------------------------	
+	message BooleanElement {
+		required bool booleanElement = 2;
+	}
+	
+	message IntElement {
+			required sfixed_32 intElement = 1;
+	}
++--------------------------------------------
+
+Enumerations to Enumerations
+
++--------------------------------------------
+    <element name="elementWithAnonymousType">
+      <simpleType>
+        <restriction base="string">
+          <enumeration value="A" />
+          <enumeration value="B" />
+          <enumeration value="C" />
+        </restriction>
+      </simpleType>
+    </element>
++--------------------------------------------
+ 
+    converts to:
+    
++--------------------------------------------
+    message ElementWithAnonymousType {
+		enum AnonymousEnum1 {
+			A = 1;
+			B = 2;
+			C = 3;
+		}
+		required AnonymousEnum1 elementWithAnonymousType = 1;
+	}
++--------------------------------------------
+
+Complex types to messages
+
++--------------------------------------------
+	<complexType name="PersonType">
+    	<sequence>
+    		<element name="firstName" type="string" minOccurs="0"/>
+    		<element name="lastName" type="string"/>
+    	</sequence>
+	</complexType>
+	<complexType name="UsePersonType">
+    	<sequence>
+    		<element name="person" type="tns:PersonType" minOccurs="1" maxOccurs="unbounded"/>
+    	</sequence>
+	</complexType>
++--------------------------------------------
+
+	converts to:
+
++--------------------------------------------
+	message PersonType {
+		optional string firstName = 1;
+		required string lastName = 2;
+	}
+	
+	message UsePersonType {
+		repeated PersonType person = 1;
+	}
++--------------------------------------------
+  
