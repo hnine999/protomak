@@ -6,4 +6,28 @@
 	
 How to use Maven Protomak Plugin
 
-   TBD  
+  * Build the entire project
+  
++-----------------------------------------------------------------
+$ cd $PROTOMAK_ROOT
+$ mvn clean install 
++-----------------------------------------------------------------
+
+  * Add the plugin group entry to your maven settings.xml file: 
+   
++-----------------------------------------------------------------
+<pluginGroups>
+      <pluginGroup>uk.co.jemos.maven.plugins</pluginGroup>
+</pluginGroups>
++-----------------------------------------------------------------
+
+  * Run the plugin as follows: 
+  
++-----------------------------------------------------------------
+$ mvn protomak:xsd-to-proto -DinputXsdFile=<path-to-input-xsd> -DoutputFolder=<path-to-output-folder>
++-----------------------------------------------------------------
+
+  []
+  
+  The plugin will generate a proto file from your input XSD.
+  
