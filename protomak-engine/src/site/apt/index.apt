@@ -3,3 +3,12 @@
 	---------------------
 	Marco Tedone
 	---------------------
+	
+	
+Protomak Engine
+
+  The Protomak Engine component is in charge of transforming various integration technologies
+  (such as XSDs, Jonas, etc) to .proto files. 
+  
+  Currently the only supported technology is XML Schemas. To find out how Protomak Engine transforms
+  XSDs into proto files, please refer to the {{{./usage.html} Usage }} page.
