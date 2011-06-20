@@ -109,7 +109,7 @@
 	<distributionManagement>
 		<site>
 			<id>www.jemos.eu/protomak</id>
-			<url>scp://tedonema@thor/home/tedonema/runtime/www/projects/protomak</url>
+			<url>scp://tedonema@ubuntu/home/tedonema/runtime/www/projects/protomak</url>
 		</site>
 	</distributionManagement>
 
