@@ -44,6 +44,7 @@
       
       <menu name="Getting Started">
       	<item name="Home" href="./index.html" />
+      	<item name="Downloads" href="./downloads.html" />
       	<item name="Sponsors" href="./sponsors/sponsors.html" />
       </menu>
       

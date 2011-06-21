@@ -1,0 +1,84 @@
+Podam Downloads
+
+  All code, including the latest development SNAPSHOT, can be downloaded from {{{https://github.com/mtedone/podam} GitHub}}
+  
+* Latest release - 0.0.1.RELEASE - TBD
+
+  Release theme: Initial release
+  
+* Protomak Parent  
+
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.zip} protomak-parent-0.0.1.RELEASE-project.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tag.gz | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.tar.gz} protomak-parent-0.0.1.RELEASE-project.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.bz2} protomak-parent-0.0.1.RELEASE-project.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+   
+
+* Protomak Engine  
+
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.zip} protomak-engine-0.0.1.RELEASE-project.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tag.gz | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.tar.gz} protomak-engine-0.0.1.RELEASE-project.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.bz2} protomak-engine-0.0.1.RELEASE-project.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.zip} protomak-engine-0.0.1.RELEASE-bin.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tag.gz | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.tar.gz} protomak-engine-0.0.1.RELEASE-bin.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.bz2} protomak-engine-0.0.1.RELEASE-bin.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+
+* Maven Protomak Plugin  
+
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.zip} maven-protomak-plugin-0.0.1.RELEASE-project.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.tar.gz} maven-protomak-plugin-0.0.1.RELEASE-project.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.bz2} maven-protomak-plugin-0.0.1.RELEASE-project.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.zip} maven-protomak-plugin-0.0.1.RELEASE-bin.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.tar.gz} maven-protomak-plugin-0.0.1.RELEASE-bin.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.bz2} maven-protomak-plugin-0.0.1.RELEASE-bin.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+
+* Ant Protomak Task  
+
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.zip} ant-protomak-task-0.0.1.RELEASE-project.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tar.gz | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.tar.gz} ant-protomak-task-0.0.1.RELEASE-project.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.bz2} ant-protomak-task-0.0.1.RELEASE-project.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries zip | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.zip} ant-protomak-task-0.0.1.RELEASE-bin.zip}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries tar.gz | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.tar.gz} ant-protomak-task-0.0.1.RELEASE-bin.tar.gz}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.bz2} ant-protomak-task-0.0.1.RELEASE-bin.bz2}} |
+*----------------+-------------------------------------------------------------------------------------------------------+
+     
+  
+* Download older releases
+
+** Protomak Parent
+
+  {{{./downloads/} For older releases click here}}
+  
+** Protomak Engine
+
+  {{{./protomak-engine/downloads/} For older releases click here}}
+  
+** Maven Protomak Plugin
+
+  {{{./maven-protomak-plugin/downloads/} For older releases click here}}
+  
+** Ant Protomak Task
+
+  {{{./ant-protomak-task/downloads/} For older releases click here}}    
