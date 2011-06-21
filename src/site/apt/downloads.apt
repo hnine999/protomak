@@ -13,7 +13,7 @@ Podam Downloads
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tag.gz | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.tar.gz} protomak-parent-0.0.1.RELEASE-project.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.bz2} protomak-parent-0.0.1.RELEASE-project.bz2}} |
+| Binaries bz2 | {{{./downloads/protomak-parent-0.0.1.RELEASE-project.tar.bz2} protomak-parent-0.0.1.RELEASE-project.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+   
 
 * Protomak Engine  
@@ -23,13 +23,13 @@ Podam Downloads
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tag.gz | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.tar.gz} protomak-engine-0.0.1.RELEASE-project.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.bz2} protomak-engine-0.0.1.RELEASE-project.bz2}} |
+| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-project.tar.bz2} protomak-engine-0.0.1.RELEASE-project.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries zip | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.zip} protomak-engine-0.0.1.RELEASE-bin.zip}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tag.gz | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.tar.gz} protomak-engine-0.0.1.RELEASE-bin.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.bz2} protomak-engine-0.0.1.RELEASE-bin.bz2}} |
+| Binaries bz2 | {{{./protomak-engine/downloads/protomak-engine-0.0.1.RELEASE-bin.tar.bz2} protomak-engine-0.0.1.RELEASE-bin.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 
 * Maven Protomak Plugin  
@@ -39,13 +39,13 @@ Podam Downloads
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.tar.gz} maven-protomak-plugin-0.0.1.RELEASE-project.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.bz2} maven-protomak-plugin-0.0.1.RELEASE-project.bz2}} |
+| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-project.tar.bz2} maven-protomak-plugin-0.0.1.RELEASE-project.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries zip | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.zip} maven-protomak-plugin-0.0.1.RELEASE-bin.zip}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.tar.gz} maven-protomak-plugin-0.0.1.RELEASE-bin.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.bz2} maven-protomak-plugin-0.0.1.RELEASE-bin.bz2}} |
+| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.1.RELEASE-bin.tar.bz2} maven-protomak-plugin-0.0.1.RELEASE-bin.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 
 * Ant Protomak Task  
@@ -55,13 +55,13 @@ Podam Downloads
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tar.gz | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.tar.gz} ant-protomak-task-0.0.1.RELEASE-project.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.bz2} ant-protomak-task-0.0.1.RELEASE-project.bz2}} |
+| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-project.tar.bz2} ant-protomak-task-0.0.1.RELEASE-project.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries zip | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.zip} ant-protomak-task-0.0.1.RELEASE-bin.zip}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 | Binaries tar.gz | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.tar.gz} ant-protomak-task-0.0.1.RELEASE-bin.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.bz2} ant-protomak-task-0.0.1.RELEASE-bin.bz2}} |
+| Binaries bz2 | {{{./ant-protomak-task/downloads/ant-protomak-task-0.0.1.RELEASE-bin.tar.bz2} ant-protomak-task-0.0.1.RELEASE-bin.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
      
   
