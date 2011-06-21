@@ -15,7 +15,7 @@ XSD Schemas to Proto Definitions
 	If you are unfamiliar with the proto language specification please refer to 
 	the {{{http://code.google.com/apis/protocolbuffers/docs/proto.html}language guide}}.
 
-Namespace to package
+* Namespace to package
 
 +--------------------------------------------
 	<schema xmlns="http://www.w3.org/2001/XMLSchema"/>
@@ -27,7 +27,7 @@ Namespace to package
 	package xmlschema.2001.org.w3.www
 +--------------------------------------------
 
-Element to message
+* Element to message
 
 +--------------------------------------------	
 	<element name="Client" type="string"/>
@@ -41,7 +41,7 @@ Element to message
 	}
 +--------------------------------------------
 	
-Elements to messages
+* Elements to messages
 
 +--------------------------------------------
 	<element name="intElement" type="int"/>
@@ -60,7 +60,7 @@ Elements to messages
 	}
 +--------------------------------------------
 
-Enumerations to Enumerations
+* Enumerations to Enumerations
 
 +--------------------------------------------
     <element name="elementWithAnonymousType">
@@ -87,7 +87,7 @@ Enumerations to Enumerations
 	}
 +--------------------------------------------
 
-Complex types to messages
+* Complex types to messages
 
 +--------------------------------------------
 	<complexType name="PersonType">

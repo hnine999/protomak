@@ -31,3 +31,53 @@ $ mvn protomak:xsd-to-proto -DinputXsdFile=<path-to-input-xsd> -DoutputFolder=<p
   
   The plugin will generate a proto file from your input XSD.
   
+* Using the plugin from within your POM
+
+  Alternatively you can use the plugin from within your POM as follows: 
+  
++------------------------------------------------------------------
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>uk.co.jemos.test</groupId>
+  <artifactId>maven-protomak-plugin-test</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>maven-protomak-plugin-test</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>uk.co.jemos.maven.plugins</groupId>
+        <artifactId>maven-protomak-plugin</artifactId>
+        <version>0.0.1.RELEASE</version>
+        <executions>
+          <execution>
+            <id>xsd-to-proto</id>
+            <goals>
+              <goal>xsd-to-proto</goal>
+            </goals>
+            <configuration>
+              <inputXsdFile>C:/temp/single-element-with-complex-type.xsd</inputXsdFile>
+              <outputFolder>C:/temp</outputFolder>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
++------------------------------------------------------------------
+
+
+
+  

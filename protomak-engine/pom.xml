@@ -5,13 +5,12 @@
 	<parent>
 		<groupId>uk.co.jemos.protomak</groupId>
 		<artifactId>protomak-parent</artifactId> 
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1.RELEASE</version>
 	</parent>
 
 
 	<groupId>uk.co.jemos.protomak</groupId>
-	<artifactId>protomak-engine</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>protomak-engine</artifactId>	
 	<packaging>jar</packaging>
 
 	<name>protomak-engine</name>

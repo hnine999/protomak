@@ -10,7 +10,6 @@
 
 	<groupId>uk.co.jemos.protomak</groupId>
 	<artifactId>protomak-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<modules>
@@ -20,6 +19,7 @@
 	</modules>
 
 	<name>protomak-parent</name>
+	<version>0.0.1.RELEASE</version>
 	<description>This is the overall documentation for PROTOMAK</description>
 	<url>http://www.jemos.eu/projects/protomak/index.html</url>
 

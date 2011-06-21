@@ -16,3 +16,45 @@ $ mvn clean install antrun:run
 +-----------------------------------------------------------------------
 
   That's it!
+  
+  The test uses the following build.xml file: 
+  
++------------------------------------------------------------------------
+
+<?xml version="1.0"?>
+
+<project name="AntProtomakXsdToProtoExample" default="main" basedir=".">
+	
+  <path id="protomak-test-path" path="${runtime_classpath}" />
+	
+  <taskdef name="mytask" classname="uk.co.jemos.protomak.ant.task.AntProtomakXsdToProtoTask"
+  	classpathref="protomak-test-path" />
+
+  <target name="main">  	
+    <mytask inputXsdFile="${inputXsdPath}" 
+    		outputFolder="/home/protomak/tests-ant" />
+  </target>
+</project>
++------------------------------------------------------------------------
+
+  The variables <runtime_classpath> and <inputXsdPath> have been set in the POM by the 
+  maven-antrun-plugin as follows: 
+  
++------------------------------------------------------------------------
+
+<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-antrun-plugin</artifactId>
+	  <version>1.6</version>
+	  <configuration>
+	    <target>
+	      <property name="runtime_classpath" refid="maven.runtime.classpath" />
+	      <property name="inputXsdPath" value="${project.build.testOutputDirectory}/protomak-test.xsd"/>      
+	      <ant antfile="${project.build.testOutputDirectory}/build.xml" />	        
+	    </target>
+	  </configuration>
+</plugin>
++------------------------------------------------------------------------
+
+  In a pure Ant project you would take care of ensuring that protomak-engine is on the classpath
+  to declare the \<taskdef\> element in the build.xml.
