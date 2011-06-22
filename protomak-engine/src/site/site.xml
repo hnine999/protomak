@@ -6,46 +6,22 @@
     
     <version position="left" />
     
-    <body>
+    <body>      
       
-      <links>     
-        
-          <item name="Download the source from GitHub"
-        	href="https://github.com/mtedone/protomak"
-        	alt="Download protomak source from GitHub"
-        	target="_blank" />
-        
-		 <item name="Join protomak Group!"
-        	href="http://groups.google.com/group/protomak"
-        	alt="Join protomak Group on Google"
-        	target="_blank" />
-        	 	
-        <item name="Follow Jemos on Twitter"
-        	href="http://twitter.com/#!/jemos_releases"
-        	alt="Follow Jemos releases on Twitter"
-        	target="_blank" />
-        	
-        <item name="Follow Me on Twitter"
-        	href="http://twitter.com/#!/marcotedone"
-        	alt="Follow Marco Tedone on Twitter"
-        	target="_blank" />
-        	
-        <item name="Jemos Homepage" href="http://www.jemos.co.uk"
-        	 	alt="Visit Jemos homepage"
-        	 	target="_blank" />
-        	 				        
-      </links>
-      
-      <menu name="Getting Started">
-        <item name="Overall Documentation" href="../index.html" />
-      	<item name="Home" href="./index.html" />
-      	<item name="Downloads" href="./downloads.html" />
+     <menu name="Getting Started" inherit="top">
+      	<item name="Home" href="../index.html" />
+      	<item name="Downloads" href="../downloads.html" />
+      	<item name="Sponsors" href="../sponsors/sponsors.html" />
       </menu>
       
-      <menu name="Technical Reference">      	
-      	<item name="Known Limitations" href="./known_limitations.html" />	
-      	<item name="FAQS" href="./faqs.html" />
-      	<item name="Release Notes" href="./release-notes/release-notes.html" />
+      <menu name="Protomak modules" inherit="top">
+      	<item name="Protomak Engine" href="../protomak-engine/index.html" />
+      	<item name="Protomak Maven Plugin" href="../maven-protomak-plugin/index.html" />
+      	<item name="Ant Protomak Task" href="../ant-protomak-task/index.html" />
+      </menu>
+      
+      <menu name="Technical Reference" inherit="top">      	
+      	<item name="Release Notes" href="../release-notes/release-notes.html" />
       </menu> 
       
       <menu ref="reports" />
