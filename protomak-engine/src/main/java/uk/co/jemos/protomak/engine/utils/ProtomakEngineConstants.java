@@ -81,6 +81,8 @@ public class ProtomakEngineConstants {
 	/** The default enum name for anonymous types */
 	public static final String ANONYMOUS_ENUM_DEFAULT_MESSAGE_TYPE_NAME = "AnonymousEnum";
 
+	public static final String XSD_EXTENSION = ".xsd";
+
 	//------------------->> Constructor
 
 	/** Non instantiable contructor */

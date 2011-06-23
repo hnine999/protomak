@@ -4,6 +4,7 @@
 package uk.co.jemos.protomak.engine.impl;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
@@ -40,15 +41,16 @@ import com.sun.xml.xsom.parser.XSOMParser;
  * @author mtedone
  * 
  */
-public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionService {
+public class XsomXsdToProtoDomainConversionServiceImpl implements
+		ConversionService {
 
-	//------------------->> Constants
+	// ------------------->> Constants
 
 	/** The application logger. */
 	public static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger
 			.getLogger(XsomXsdToProtoDomainConversionServiceImpl.class);
 
-	//------------------->> Instance / Static variables
+	// ------------------->> Instance / Static variables
 
 	/** The processor for complex types */
 	private final XsomComplexTypeProcessor complexTypeProcessor;
@@ -57,16 +59,16 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 	private final ProtoSerialisationService protoSerialisationService;
 
 	/** The XSOM Schema parser */
-	private XSOMParser parser = new XSOMParser();
+	private XSOMParser parser;
 
-	//------------------->> Constructors
+	// ------------------->> Constructors
 
 	/**
 	 * Default constructor.
 	 */
 	public XsomXsdToProtoDomainConversionServiceImpl() {
-		this(XsomDefaultComplexTypeProcessor.getInstance(), PojoToProtoSerialisationServiceImpl
-				.getInstance());
+		this(XsomDefaultComplexTypeProcessor.getInstance(),
+				PojoToProtoSerialisationServiceImpl.getInstance());
 	}
 
 	/**
@@ -78,14 +80,15 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 	 * @param protoSerialisationService
 	 *            The proto serialisation service.
 	 */
-	public XsomXsdToProtoDomainConversionServiceImpl(XsomComplexTypeProcessor complexTypeProcessor,
+	public XsomXsdToProtoDomainConversionServiceImpl(
+			XsomComplexTypeProcessor complexTypeProcessor,
 			ProtoSerialisationService protoSerialisationService) {
 		super();
 		this.complexTypeProcessor = complexTypeProcessor;
 		this.protoSerialisationService = protoSerialisationService;
 	}
 
-	//------------------->> Public methods
+	// ------------------->> Public methods
 
 	/**
 	 * {@inheritDoc}
@@ -101,9 +104,12 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 	 */
 	public void generateProtoFiles(String inputPath, String outputPath) {
 
+		parser = new XSOMParser();
+
 		File inputFilePath = new File(inputPath);
 		if (!inputFilePath.exists()) {
-			String errMsg = "The XSD input file: " + inputFilePath.getAbsolutePath()
+			String errMsg = "The XSD input file: "
+					+ inputFilePath.getAbsolutePath()
 					+ " does not exist. Throwing an exception.";
 			LOG.error(errMsg);
 			throw new IllegalArgumentException(errMsg);
@@ -120,22 +126,25 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 			}
 
 			LOG.info("Processing all complex types in the XSD...");
-			manageComplexTypes(proto, sset, inputPath);
+			this.manageComplexTypes(proto, sset, inputPath);
 
 			LOG.info("Processing all elements in the XSD...");
-			manageElements(proto, sset, inputPath);
+			this.manageElements(proto, sset, inputPath);
 
-			//Sorts the Message Types in order of their names
+			// Sorts the Message Types in order of their names
 			LOG.info("Sorting Message Types based on their names...");
-			Collections.sort(proto.getMessage(), ProtomakEngineConstants.MESSAGE_TYPE_COMPARATOR);
+			Collections.sort(proto.getMessage(),
+					ProtomakEngineConstants.MESSAGE_TYPE_COMPARATOR);
 
 			String protoFileName = ProtomakEngineHelper
 					.extractProtoFileNameFromXsdName(inputFilePath.getName());
 
 			File outputDir = new File(outputPath);
 
-			protoSerialisationService.writeProtoFile(protoFileName, outputDir, proto);
-			LOG.info("Proto file: " + protoFileName + " written to " + outputPath);
+			protoSerialisationService.writeProtoFile(protoFileName, outputDir,
+					proto);
+			LOG.info("Proto file: " + protoFileName + " written to "
+					+ outputPath);
 
 		} catch (SAXException e) {
 			String errMsg = "A SAX Exception occurred while parsing the XSD Schema.";
@@ -145,6 +154,32 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 			String errMsg = "An IO Exception occurred while parsing the XSD Schema.";
 			LOG.error(errMsg, e);
 			throw new ProtomakXsdToProtoConversionError(e);
+		}
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void generateProtoFiles(String inputFolder, String outputFolder,
+			final String fileExtension) {
+
+		File inputFolderFile = new File(inputFolder);
+		if (!inputFolderFile.exists()) {
+			throw new IllegalArgumentException("The input folder: "
+					+ inputFolderFile.getAbsolutePath() + " does not exist!");
+		}
+
+		FilenameFilter filenameFilter = new FilenameFilter() {
+
+			public boolean accept(File dir, String name) {
+				return name.toLowerCase().endsWith(fileExtension);
+			}
+		};
+
+		File[] inputFiles = inputFolderFile.listFiles(filenameFilter);
+		for (File file : inputFiles) {
+			this.generateProtoFiles(file.getAbsolutePath(), outputFolder);
 		}
 
 	}
@@ -161,7 +196,7 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 		this.parser = parser;
 	}
 
-	//------------------->> Private methods
+	// ------------------->> Private methods
 
 	/**
 	 * It goes through all complex types in the XSD and for each one it creates
@@ -174,30 +209,35 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 	 * @param inputPath
 	 *            The full path to the XSD file
 	 */
-	private void manageComplexTypes(ProtoType proto, XSSchemaSet schema, String inputPath) {
+	private void manageComplexTypes(ProtoType proto, XSSchemaSet schema,
+			String inputPath) {
 
 		List<MessageType> protoMessages = proto.getMessage();
 
-		Iterator<XSComplexType> complexTypesIterator = schema.iterateComplexTypes();
+		Iterator<XSComplexType> complexTypesIterator = schema
+				.iterateComplexTypes();
 
 		XSComplexType complexType = null;
 
 		while (complexTypesIterator.hasNext()) {
 
 			complexType = complexTypesIterator.next();
-			if (complexType.getName().equals(ProtomakEngineConstants.ANY_TYPE_NAME)) {
+			if (complexType.getName().equals(
+					ProtomakEngineConstants.ANY_TYPE_NAME)) {
 				LOG.debug("Skipping anyType: " + complexType.getName());
 				continue;
 			}
 			if (null == proto.getPackage()) {
 
 				String packageName = ProtomakEngineHelper
-						.convertTargetNsToProtoPackageName(complexType.getTargetNamespace());
+						.convertTargetNsToProtoPackageName(complexType
+								.getTargetNamespace());
 				LOG.info("Proto package will be: " + packageName);
 				proto.setPackage(packageName);
 			}
 			LOG.debug("Processing complex type: " + complexType.getName());
-			complexTypeProcessor.processComplexType(protoMessages, complexType, inputPath);
+			complexTypeProcessor.processComplexType(protoMessages, complexType,
+					inputPath);
 
 		}
 
@@ -215,26 +255,32 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 	 * @param inputPath
 	 *            The full path to the XSD file
 	 */
-	private void manageElements(ProtoType proto, XSSchemaSet schema, String inputPath) {
-		//Iterates over the elements
-		Iterator<XSElementDecl> declaredElementsIterator = schema.iterateElementDecls();
+	private void manageElements(ProtoType proto, XSSchemaSet schema,
+			String inputPath) {
+		// Iterates over the elements
+		Iterator<XSElementDecl> declaredElementsIterator = schema
+				.iterateElementDecls();
 		int messageSuffix = 1;
 		while (declaredElementsIterator.hasNext()) {
 			MessageType msgType = new MessageType();
 			XSElementDecl element = declaredElementsIterator.next();
 			XSType type = element.getType();
 			if (type.isLocal()) {
-				LOG.debug("Type for element: " + element.getName() + " is local");
-				TypeVisitor visitor = new TypeVisitor(proto.getMessage(), msgType, inputPath);
+				LOG.debug("Type for element: " + element.getName()
+						+ " is local");
+				TypeVisitor visitor = new TypeVisitor(proto.getMessage(),
+						msgType, inputPath);
 				type.visit(visitor);
 			}
 
-			String nameForAnonymousType = ProtomakEngineHelper.getMessageTypeName(
-					element.getName(), inputPath);
+			String nameForAnonymousType = ProtomakEngineHelper
+					.getMessageTypeName(element.getName(), inputPath);
 			msgType.setName(nameForAnonymousType);
-			List<MessageAttributeType> msgAttributes = msgType.getMsgAttribute();
-			MessageAttributeType msgAttrType = ProtomakEngineHelper.getMessageAttribute(element,
-					messageSuffix, MessageAttributeOptionalType.REQUIRED);
+			List<MessageAttributeType> msgAttributes = msgType
+					.getMsgAttribute();
+			MessageAttributeType msgAttrType = ProtomakEngineHelper
+					.getMessageAttribute(element, messageSuffix,
+							MessageAttributeOptionalType.REQUIRED);
 			msgAttributes.add(msgAttrType);
 
 			messageSuffix++;
@@ -243,15 +289,17 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements ConversionServ
 
 			if (null == proto.getPackage()) {
 
-				String packageName = ProtomakEngineHelper.convertTargetNsToProtoPackageName(element.getTargetNamespace());
+				String packageName = ProtomakEngineHelper
+						.convertTargetNsToProtoPackageName(element
+								.getTargetNamespace());
 				LOG.info("Proto package will be: " + packageName);
 				proto.setPackage(packageName);
 			}
 		}
 	}
 
-	//------------------->> equals() / hashcode() / toString()
+	// ------------------->> equals() / hashcode() / toString()
 
-	//------------------->> Inner classes
+	// ------------------->> Inner classes
 
 }
