@@ -15,95 +15,14 @@
 	<name>maven-protomak-plugin</name>
 	<url>http://maven.apache.org</url>
 
-	<licenses>
-		<license>
-			<name>Protomak runs under the MIT license</name>
-			<url>LICENSE.txt</url>
-		</license>
-	</licenses>
 
-	<issueManagement>
-		<system>JIRA</system>
-		<url>http://www.jemos.eu/jira</url>
-	</issueManagement>
-
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://www.jemos.eu/jenkins</url>
-	</ciManagement>
-
-	<mailingLists>
-		<mailingList>
-			<name>protomak - Google Groups</name>
-			<subscribe>http://groups.google.com/group/protomak</subscribe>
-			<unsubscribe>http://groups.google.com/group/protomak</unsubscribe>
-		</mailingList>
-	</mailingLists>
-
-	<scm>
-		<url>scm:git clone git://github.com/mtedone/protomak.git</url>
-		<connection>scm:git clone git://github.com/mtedone/protomak.git</connection>
-	</scm>
-
-	<developers>
-		<developer>
-			<id>mtedone</id>
-			<name>Marco Tedone</name>
-			<email>marco.tedone@gmail.com</email>
-			<organization>Jemos</organization>
-			<organizationUrl>http://www.jemos.eu/projects/protomak</organizationUrl>
-			<roles>
-				<role>Project Lead</role>
-				<role>Team Member</role>
-			</roles>
-			<timezone>UTC</timezone>
-			<url>http://tedone.typepad.com/blog/</url>
-		</developer>
-		<developer>
-			<id>paulwhitby</id>
-			<name>Paul Whitby</name>
-			<email>paulwhitby@btconnect.com</email>
-			<organization>Jemos</organization>
-			<organizationUrl>http://www.jemos.eu/projects/protomak</organizationUrl>
-			<roles>
-				<role>Team Member</role>
-			</roles>
-			<timezone>UTC</timezone>
-		</developer>
-		<developer>
-			<id>sharatkoya</id>
-			<name>Sharat Koya</name>
-			<email>sharat.koya@me.com</email>
-			<organization>Jemos</organization>
-			<organizationUrl>http://www.jemos.eu/projects/protomak</organizationUrl>
-			<roles>
-				<role>Team Member</role>
-			</roles>
-			<timezone>UTC</timezone>
-		</developer>
-		<developer>
-			<id>edwilde</id>
-			<name>Ed Wilde</name>
-			<email>TBD</email>
-			<organization>Jemos</organization>
-			<organizationUrl>http://www.jemos.eu/projects/protomak</organizationUrl>
-			<roles>
-				<role>Team Member</role>
-			</roles>
-			<timezone>UTC</timezone>
-		</developer>
-	</developers>
 	
 	<distributionManagement>
 	  <site>
 	    <id>www.jemos.eu/protomak</id>
 	    <url>scp://tedonema@ubuntu/home/tedonema/runtime/www/projects/protomak/maven-protomak-plugin</url>
 	  </site>
-	</distributionManagement>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	</distributionManagement>	
 
 	<dependencies>
 		<dependency>
