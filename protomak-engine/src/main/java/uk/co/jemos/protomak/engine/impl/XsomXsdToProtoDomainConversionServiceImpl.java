@@ -104,8 +104,6 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 	 */
 	public void generateProtoFiles(String inputPath, String outputPath) {
 
-		parser = new XSOMParser();
-
 		File inputFilePath = new File(inputPath);
 		if (!inputFilePath.exists()) {
 			String errMsg = "The XSD input file: "
@@ -154,6 +152,12 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 			String errMsg = "An IO Exception occurred while parsing the XSD Schema.";
 			LOG.error(errMsg, e);
 			throw new ProtomakXsdToProtoConversionError(e);
+		} finally {
+			// Nasty, but for bulk generation, apparently the parser retains
+			// previous state, so we need to create a new one each time. We do
+			// this at the end not to step on the toes of mock parsers set by
+			// tests
+			parser = new XSOMParser();
 		}
 
 	}
