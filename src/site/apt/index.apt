@@ -19,6 +19,6 @@ Supported integration technologies
   
   * XML Schemas (XSDs)
   
-  To see how XSDs are transformed into .proto files, please check the protomak-engine documentation.
+  To see how XSDs are transformed into .proto files, please check the {{{./protomak-engine/index.html}protomak-engine documentation}}.
   
   
