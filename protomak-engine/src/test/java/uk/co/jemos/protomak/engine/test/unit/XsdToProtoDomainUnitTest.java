@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
 import org.powermock.api.easymock.PowerMock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 
 import uk.co.jemos.protomak.engine.exceptions.ProtomakXsdToProtoConversionError;
@@ -71,6 +72,8 @@ public class XsdToProtoDomainUnitTest {
 		XSOMParser parserMock = PowerMock.createMock(XSOMParser.class);
 
 		service.setParser(parserMock);
+		parserMock.setErrorHandler(EasyMock.isA(ErrorHandler.class));
+		EasyMock.expectLastCall();
 		parserMock.parse(xsdSchema);
 		EasyMock.expectLastCall().andThrow(
 				new IOException("Mocked IO exception"));
@@ -99,6 +102,7 @@ public class XsdToProtoDomainUnitTest {
 		XSOMParser parserMock = PowerMock.createMock(XSOMParser.class);
 
 		service.setParser(parserMock);
+		parserMock.setErrorHandler(EasyMock.isA(ErrorHandler.class));
 		parserMock.parse(xsdSchema);
 		EasyMock.expectLastCall().andThrow(
 				new SAXException("Mocked Sax exception"));
@@ -234,6 +238,15 @@ public class XsdToProtoDomainUnitTest {
 				.extractProtoFileNameFromXsdName(ProtomakEngineTestConstants.ANONYMOUS_TYPES_FILE_NAME);
 
 		this.verifyExpectedAndActualProto(protoFileName);
+	}
+
+	@Test(expected = ProtomakXsdToProtoConversionError.class)
+	public void testInvalidSchemaParsing() throws Exception {
+
+		service.generateProtoFiles(
+				ProtomakEngineTestConstants.INVALID_SCHEMA_XDS_PATH,
+				ProtomakEngineTestConstants.PROTOS_OUTPUT_DIR);
+
 	}
 
 	@Test

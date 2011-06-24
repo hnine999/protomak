@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 
 import uk.co.jemos.protomak.engine.api.ConversionService;
@@ -57,6 +58,9 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 
 	/** The proto serialisation service */
 	private final ProtoSerialisationService protoSerialisationService;
+
+	/** Error Handler */
+	private ErrorHandler errorHandler = new ProtomakErrorHandler();
 
 	/** The XSOM Schema parser */
 	private XSOMParser parser;
@@ -116,6 +120,9 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 		ProtoType proto = new ProtoType();
 
 		try {
+
+			parser.setErrorHandler(errorHandler);
+
 			parser.parse(inputFilePath);
 			XSSchemaSet sset = parser.getResult();
 			if (null == sset) {

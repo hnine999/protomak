@@ -15,13 +15,13 @@ public class ProtomakEngineTestConstants {
 
 	/** The name of the single element with complex type XSD file */
 	public static final String SINGLE_ELEMENT_WITH_COMPLEX_TYPE_FILE_NAME = "single-element-with-complex-type.xsd";
-	
+
 	/** The name of the single element with complex type XSD file */
 	public static final String SINGLE_ELEMENT_WITH_INHERITED_COMPLEX_TYPE_FILE_NAME = "single-element-with-inherited-complex-type.xsd";
-	
+
 	/** The name of the single element with complex type XSD file */
 	public static final String MULTIPLE_DEPTH_INHERITED_COMPLEX_TYPES_XSD_FILE_NAME = "multiple-depth-inheritance.xsd";
-		
+
 	/** The name of the simple single element XSD file. */
 	public static final String SIMPLE_SINGLE_ELEMENT_FILE_NAME = "one-simple-single-element.xsd";
 
@@ -51,7 +51,7 @@ public class ProtomakEngineTestConstants {
 
 	/** The full path to the folder where to put the generated java classes. */
 	public static final String POJOS_OUTPUT_DIR = "target/generated-sources/java";
-	
+
 	/** The path to the expected proto files directory */
 	public static final String EXPECTED_PROTO_DIR = "src/test/resources/expected-proto-files";
 
@@ -68,8 +68,8 @@ public class ProtomakEngineTestConstants {
 	public static final String MULTIPLE_COMPLEX_TYPES_ONLY_FILE_NAME = "multiple-complex-types-only.xsd";
 
 	/** The full path to the XSD to test. */
-	public static final String SIMPLE_ONE_LEVEL_XSD_PATH = TEST_XSDS_FOLDER + File.separatorChar
-			+ SIMPLE_ONE_LEVEL_FILE_NAME;
+	public static final String SIMPLE_ONE_LEVEL_XSD_PATH = TEST_XSDS_FOLDER
+			+ File.separatorChar + SIMPLE_ONE_LEVEL_FILE_NAME;
 
 	/** The path to one-simple-single-element */
 	public static final String SIMPLE_SINGLE_ELEMENT_XSD_PATH = TEST_XSDS_FOLDER
@@ -85,27 +85,29 @@ public class ProtomakEngineTestConstants {
 
 	/** The path to single-element-with-complex-type */
 	public static final String SINGLE_ELEMENT_WITH_INHERITED_COMPLEX_TYPE_XSD_PATH = TEST_XSDS_FOLDER
-			+ File.separatorChar + SINGLE_ELEMENT_WITH_INHERITED_COMPLEX_TYPE_FILE_NAME;
+			+ File.separatorChar
+			+ SINGLE_ELEMENT_WITH_INHERITED_COMPLEX_TYPE_FILE_NAME;
 
 	/** The path to single-element-with-complex-type */
 	public static final String MULTIPLE_DEPTH_INHERITED_COMPLEX_TYPES_XSD_PATH = TEST_XSDS_FOLDER
-			+ File.separatorChar + MULTIPLE_DEPTH_INHERITED_COMPLEX_TYPES_XSD_FILE_NAME;
+			+ File.separatorChar
+			+ MULTIPLE_DEPTH_INHERITED_COMPLEX_TYPES_XSD_FILE_NAME;
 
-	
 	/** The path to multiple-complex-types-only */
 	public static final String MULTIPLE_COMPLEX_TYPES_XSD_PATH = TEST_XSDS_FOLDER
 			+ File.separatorChar + MULTIPLE_COMPLEX_TYPES_ONLY_FILE_NAME;
 
 	/** The path to the anonymous-types XSD file */
-	public static final String ANONYMOUS_TYPES_XSD_PATH = TEST_XSDS_FOLDER + File.separatorChar
-			+ ANONYMOUS_TYPES_FILE_NAME;
+	public static final String ANONYMOUS_TYPES_XSD_PATH = TEST_XSDS_FOLDER
+			+ File.separatorChar + ANONYMOUS_TYPES_FILE_NAME;
 
 	/**
 	 * The full path to element-complex-and single-type-with-restrictions XSD
 	 * file.
 	 */
 	public static final String ELEMENT_WITH_COMPLEX_AND_SIMPLE_TYPE_WITH_RESTRICTIONS_XSD_PATH = TEST_XSDS_FOLDER
-			+ File.separatorChar + ELEMENT_COMPLEX_AND_SIMPLE_TYPE_WITH_RESTRICTIONS_FILE_NAME;
+			+ File.separatorChar
+			+ ELEMENT_COMPLEX_AND_SIMPLE_TYPE_WITH_RESTRICTIONS_FILE_NAME;
 
 	/** A target name space which contains HTTP as prefix. */
 	public static final String TEST_TARGET_NAMESPACE_WITH_HTTP_PREFIX = "http://www.jemos.eu/simple-one-level";
@@ -121,6 +123,14 @@ public class ProtomakEngineTestConstants {
 
 	/** The name of the proto metadata definition XML file */
 	public static final String PROTO_XML_DEFINITION_FILE_NAME = "proto-metadata-definition.xml";
+
+	/** The name of an invalid schema file */
+	public static final String INVALID_SCHEMA_FILE_NAME = "invalid-schema.xsd";
+
+	/** The full path to the invalid schema file */
+	public static final String INVALID_SCHEMA_XDS_PATH = TEST_XSDS_FOLDER
+			+ File.separatorChar + "invalid" + File.separatorChar
+			+ INVALID_SCHEMA_FILE_NAME;
 
 	/**
 	 * The path to public static final String
