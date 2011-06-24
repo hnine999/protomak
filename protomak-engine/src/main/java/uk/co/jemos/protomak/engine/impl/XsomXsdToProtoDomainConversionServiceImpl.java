@@ -121,6 +121,12 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 
 		try {
 
+			LOG.debug("Is parser null? " + parser == null);
+
+			if (parser == null) {
+				parser = new XSOMParser();
+			}
+
 			parser.setErrorHandler(errorHandler);
 
 			parser.parse(inputFilePath);
@@ -190,6 +196,7 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 
 		File[] inputFiles = inputFolderFile.listFiles(filenameFilter);
 		for (File file : inputFiles) {
+			LOG.info("Invoking conversion for file: " + file.getAbsolutePath());
 			this.generateProtoFiles(file.getAbsolutePath(), outputFolder);
 		}
 
