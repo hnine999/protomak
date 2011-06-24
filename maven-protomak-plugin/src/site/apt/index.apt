@@ -70,6 +70,18 @@ $ mvn protomak:xsd-to-proto -DinputXsdFile=<path-to-input-xsd> -DoutputFolder=<p
               <outputFolder>C:/temp</outputFolder>
             </configuration>
           </execution>
+          <execution>
+            <id>all-xsds-to-proto</id>
+            <goals>
+              <goal>all-xsds-to-proto</goal>
+            </goals>
+            <configuration>
+              <inputFolder>C:/temp</inputFolder>
+              <outputFolder>C:/temp</outputFolder>
+              <!-- The following element is optional and defaults to .xsd -->              
+              <extension>.xsd</extension>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>

@@ -27,14 +27,22 @@ $ mvn clean install antrun:run
 	
   <path id="protomak-test-path" path="${runtime_classpath}" />
 	
-  <taskdef name="mytask" classname="uk.co.jemos.protomak.ant.task.AntProtomakXsdToProtoTask"
+  <taskdef name="xsdToProto" classname="uk.co.jemos.protomak.ant.task.AntProtomakXsdToProtoTask"
   	classpathref="protomak-test-path" />
+	
+  <taskdef name="allXsdsToProtos" classname="uk.co.jemos.protomak.ant.task.AntProtomakAllXsdsToProtoTask"
+	  	classpathref="protomak-test-path" />
 
   <target name="main">  	
-    <mytask inputXsdFile="${inputXsdPath}" 
-    		outputFolder="/home/protomak/tests-ant" />
+    <xsdToProto inputXsdFile="${inputXsdPath}" 
+    		    outputFolder="/home/protomak/tests-ant" />
+  	
+    <allXsdsToProtos inputXsdFile="${inputFolder}" 
+    		    outputFolder="/home/protomak/tests-ant" 
+    			extension=".xsd"/>
   </target>
 </project>
+
 +------------------------------------------------------------------------
 
   The variables <runtime_classpath> and <inputXsdPath> have been set in the POM by the 
@@ -49,7 +57,8 @@ $ mvn clean install antrun:run
 	  <configuration>
 	    <target>
 	      <property name="runtime_classpath" refid="maven.runtime.classpath" />
-	      <property name="inputXsdPath" value="${project.build.testOutputDirectory}/protomak-test.xsd"/>      
+	      <property name="inputXsdPath" value="${project.build.testOutputDirectory}/protomak-test.xsd"/>  
+	      <property name="inputFolder" value="${project.build.testOutputDirectory}" />    
 	      <ant antfile="${project.build.testOutputDirectory}/build.xml" />	        
 	    </target>
 	  </configuration>

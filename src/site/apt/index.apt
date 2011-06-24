@@ -7,7 +7,7 @@
 Goals 
 
   The overall goal of Protomak is to provide a comprehensive set of tools to transform 
-  integration technologies artifacts (such as Jonas, XSD/XML. Java POJOs, 
+  integration technologies artifacts (such as Jonas, XSD/XML, Java POJOs, 
   Flex DTOs, etc) to proto files.
   
   We think that by providing an automated tool to generate proto files we will help the community

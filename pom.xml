@@ -19,7 +19,7 @@
 	</modules>
 
 	<name>protomak-parent</name>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2.RELEASE</version>
 	<description>This is the overall documentation for PROTOMAK</description>
 	<url>http://www.jemos.eu/projects/protomak/index.html</url>
 

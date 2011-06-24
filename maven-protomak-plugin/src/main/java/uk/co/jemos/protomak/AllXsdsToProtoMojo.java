@@ -21,7 +21,7 @@ public class AllXsdsToProtoMojo extends AbstractMojo {
 	/**
 	 * Location of the file.
 	 * 
-	 * @parameter expression="${inputXsdFile}"
+	 * @parameter expression="${inputFolder}"
 	 * @required
 	 */
 	private String inputFolder;
