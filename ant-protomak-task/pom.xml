@@ -98,6 +98,7 @@
 			      <property name="runtime_classpath" refid="maven.runtime.classpath" />
 			      <property name="inputXsdPath" 
 			      	value="${project.build.testOutputDirectory}/protomak-test.xsd"/>
+			      <property name="inputFolder" value="${project.build.testOutputDirectory}" />
 		      
 			      <ant antfile="${project.build.testOutputDirectory}/build.xml" />
 			        
