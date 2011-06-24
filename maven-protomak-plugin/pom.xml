@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>uk.co.jemos.protomak</groupId>
 		<artifactId>protomak-parent</artifactId> 
-		<version>0.0.2.RELEASE</version>
+		<version>0.0.3-SNAPSHOT</version> 
 	</parent>
 
 	<groupId>uk.co.jemos.maven.plugins</groupId>
