@@ -181,7 +181,7 @@
 					<attach>true</attach>
 					<show>private</show>
 					<doctitle>Jemos protomak API - Version: ${project.version}</doctitle>
-					<footer>Jemos 2002 - 2011: All Rights Reserved. protomak runs under
+					<footer>Jemos 2002 - 2011: All Rights Reserved. Protomak runs under
 						the MIT license</footer>
 				</configuration>
 			</plugin>
