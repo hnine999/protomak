@@ -12,10 +12,10 @@
 
   <target name="main">  	
     <xsdToProto inputXsdFile="${inputXsdPath}" 
-    		    outputFolder="/home/protomak/tests-ant" />
+    		    outputFolder="${user.home}/protomak/tests-ant" />
   	
     <allXsdsToProtos inputXsdFile="${inputFolder}" 
-    		    outputFolder="/home/protomak/tests-ant" 
+    		    outputFolder="${user.home}/protomak/tests-ant" 
     			extension=".xsd"/>
   </target>
 </project>
