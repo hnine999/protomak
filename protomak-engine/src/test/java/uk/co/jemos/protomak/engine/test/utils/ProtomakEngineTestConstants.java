@@ -132,6 +132,15 @@ public class ProtomakEngineTestConstants {
 			+ File.separatorChar + "invalid" + File.separatorChar
 			+ INVALID_SCHEMA_FILE_NAME;
 
+	public static final String TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_NAME = "top-level-element-with-anonymous-complex-type.xsd";
+
+	/** The path to {@link #TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_NAME} */
+	public static final String TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_PATH = TEST_XSDS_FOLDER
+			+ File.separatorChar
+			+ "bug_pmk_31"
+			+ File.separatorChar
+			+ TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_NAME;
+
 	/**
 	 * The path to public static final String
 	 * SINGLE_ELEMENT_WITH_COMPLEX_TYPE_XSD_PATH = null;

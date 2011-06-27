@@ -240,6 +240,20 @@ public class XsdToProtoDomainUnitTest {
 		this.verifyExpectedAndActualProto(protoFileName);
 	}
 
+	@Test
+	public void testTopElementWithAnonymousComplexType() throws Exception {
+
+		service.generateProtoFiles(
+				ProtomakEngineTestConstants.TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_PATH,
+				ProtomakEngineTestConstants.PROTOS_OUTPUT_DIR);
+
+		String protoFileName = ProtomakEngineHelper
+				.extractProtoFileNameFromXsdName(ProtomakEngineTestConstants.TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_NAME);
+
+		this.verifyExpectedAndActualProto(protoFileName);
+
+	}
+
 	@Test(expected = ProtomakXsdToProtoConversionError.class)
 	public void testInvalidSchemaParsing() throws Exception {
 
@@ -280,6 +294,8 @@ public class XsdToProtoDomainUnitTest {
 
 		File[] protoFiles = outputFolder.listFiles(protoFileNameFilter);
 		Assert.assertNotNull("There are no output proto files!", protoFiles);
+		Assert.assertTrue("There should be more than one proto file!",
+				protoFiles.length > 1);
 
 		File inputFolder = new File(
 				ProtomakEngineTestConstants.TEST_XSDS_FOLDER);
@@ -288,8 +304,8 @@ public class XsdToProtoDomainUnitTest {
 		Assert.assertNotNull("The list of XSD files for input folder: "
 				+ inputFolder.getAbsolutePath() + " is null!", xsdFiles);
 		Assert.assertTrue(
-				"The number of input xsd files does not match the number of generated proto files",
-				xsdFiles.length == protoFiles.length);
+				"There number of XSDs should at least be the same of that of protos",
+				xsdFiles.length <= protoFiles.length);
 
 	}
 

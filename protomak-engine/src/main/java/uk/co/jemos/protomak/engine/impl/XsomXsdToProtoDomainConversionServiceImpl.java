@@ -295,11 +295,19 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 			MessageAttributeType msgAttrType = ProtomakEngineHelper
 					.getMessageAttribute(element, messageSuffix,
 							MessageAttributeOptionalType.REQUIRED);
-			msgAttributes.add(msgAttrType);
+			if (msgAttrType.getRuntimeType().getCustomType() == null
+					&& msgAttrType.getRuntimeType().getProtoType() == null) {
+				LOG.warn("This appears to be a top level element with a complex type which defines attributes only. "
+						+ "Skipping the addition of the MessageType to Proto since a Message Type identifying the "
+						+ "anonymous complex type should have already been created");
+			} else {
 
-			messageSuffix++;
+				msgAttributes.add(msgAttrType);
 
-			proto.getMessage().add(msgType);
+				messageSuffix++;
+
+				proto.getMessage().add(msgType);
+			}
 
 			if (null == proto.getPackage()) {
 

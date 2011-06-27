@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://com/ubs/eq/erad/xmlbeans/products"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://example.com"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Example">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:long" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema> 
