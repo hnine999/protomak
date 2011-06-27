@@ -32,13 +32,13 @@ import com.sun.xml.xsom.XSType;
  */
 public class ProtomakEngineHelper {
 
-	//------------------->> Constants
+	// ------------------->> Constants
 
 	/** The application logger. */
 	public static final org.apache.log4j.Logger LOG = org.apache.log4j.Logger
 			.getLogger(ProtomakEngineHelper.class);
 
-	//------------------->> Instance / Static variables
+	// ------------------->> Instance / Static variables
 
 	/** A repository of anonymous type names bound to the XSD input file name */
 	private static final ConcurrentMap<String, String> ANONYMOUS_TYPES_CACHE = new ConcurrentHashMap<String, String>();
@@ -62,14 +62,14 @@ public class ProtomakEngineHelper {
 
 	}
 
-	//------------------->> Constructors
+	// ------------------->> Constructors
 
 	/** Non instantiable constructor */
 	private ProtomakEngineHelper() {
 		throw new AssertionError();
 	}
 
-	//------------------->> Public methods
+	// ------------------->> Public methods
 
 	/**
 	 * Given an XSAttributeUse it creates and returns a
@@ -83,8 +83,8 @@ public class ProtomakEngineHelper {
 	 * 
 	 * @return A {@link MessageAttributeType}
 	 */
-	public static MessageAttributeType convertXsomAttributeToMessageAttributeType(int protoCounter,
-			XSAttributeUse xsdAttribute) {
+	public static MessageAttributeType convertXsomAttributeToMessageAttributeType(
+			int protoCounter, XSAttributeUse xsdAttribute) {
 
 		MessageAttributeType retValue = new MessageAttributeType();
 		if (xsdAttribute.isRequired()) {
@@ -98,7 +98,8 @@ public class ProtomakEngineHelper {
 
 		MessageRuntimeType runtimeType = new MessageRuntimeType();
 		String attributeTypeName = attributeDeclaration.getType().getName();
-		ProtoRuntimeType protoRuntimeType = XSD_TO_PROTO_TYPE_MAPPING.get(attributeTypeName);
+		ProtoRuntimeType protoRuntimeType = XSD_TO_PROTO_TYPE_MAPPING
+				.get(attributeTypeName);
 		if (null != protoRuntimeType) {
 			runtimeType.setProtoType(protoRuntimeType);
 		} else {
@@ -124,8 +125,9 @@ public class ProtomakEngineHelper {
 	 *            The optionality to assign to this message attribute.
 	 * @return A {@link MessageType}
 	 */
-	public static MessageAttributeType getMessageAttribute(XSElementDecl element,
-			int messageAttributeOrdinal, MessageAttributeOptionalType attributeOptionality) {
+	public static MessageAttributeType getMessageAttribute(
+			XSElementDecl element, int messageAttributeOrdinal,
+			MessageAttributeOptionalType attributeOptionality) {
 
 		MessageAttributeType msgAttrType = new MessageAttributeType();
 		msgAttrType.setName(element.getName());
@@ -153,9 +155,10 @@ public class ProtomakEngineHelper {
 				ProtoRuntimeType protoRuntimeType = ProtomakEngineHelper.XSD_TO_PROTO_TYPE_MAPPING
 						.get(elementType.getName());
 				if (null == protoRuntimeType) {
-					LOG.debug("For element: " + element.getName() + " the SimpleType: "
-							+ elementType.getName() + " appears to be custom.");
-					//This is a custom SimpleType
+					LOG.debug("For element: " + element.getName()
+							+ " the SimpleType: " + elementType.getName()
+							+ " appears to be custom.");
+					// This is a custom SimpleType
 					runtimeType.setCustomType(elementType.getName());
 
 				} else {
@@ -190,7 +193,8 @@ public class ProtomakEngineHelper {
 		int idx = inputPath.lastIndexOf(".");
 		if (idx >= 0) {
 			String fileName = inputPath.substring(0, idx);
-			retValue = fileName + ProtomakEngineConstants.PROTO_FILE_EXTENSION_NAME;
+			retValue = fileName
+					+ ProtomakEngineConstants.PROTO_FILE_EXTENSION_NAME;
 		}
 
 		return retValue;
@@ -235,7 +239,8 @@ public class ProtomakEngineHelper {
 	 *             If the target name space is null or it violates naming
 	 *             standards
 	 */
-	public static String convertTargetNsToProtoPackageName(String targetNameSpace) {
+	public static String convertTargetNsToProtoPackageName(
+			String targetNameSpace) {
 
 		URI uri = getNormalisedUri(targetNameSpace);
 
@@ -244,7 +249,7 @@ public class ProtomakEngineHelper {
 		List<String> packageTokens = new ArrayList<String>();
 
 		if (authority != null) {
-			//Reverses the authority to form the package name
+			// Reverses the authority to form the package name
 			String[] authorityTokens = uri.getHost().split("\\.");
 			for (int i = authorityTokens.length - 1; i >= 0; i--) {
 				packageTokens.add(authorityTokens[i]);
@@ -254,7 +259,7 @@ public class ProtomakEngineHelper {
 		String path = uri.getPath();
 		if (null != path) {
 
-			//It removes all ../
+			// It removes all ../
 			int idx = 0;
 			while ((idx = path.indexOf("../")) >= 0) {
 				path = path.substring(idx + 3);
@@ -301,17 +306,19 @@ public class ProtomakEngineHelper {
 	 * @throws IllegalArgumentException
 	 *             If min or max occurs have got invalid values.
 	 */
-	public static MessageAttributeOptionalType getMessageAttributeOptionality(int minOccurs,
-			int maxOccurs) {
+	public static MessageAttributeOptionalType getMessageAttributeOptionality(
+			int minOccurs, int maxOccurs) {
 
 		if (minOccurs < 0 || minOccurs > 1) {
-			String errMsg = "minOccurs must either be 0 or 1 but it was: " + minOccurs;
+			String errMsg = "minOccurs must either be 0 or 1 but it was: "
+					+ minOccurs;
 			LOG.error(errMsg);
 			throw new IllegalArgumentException(errMsg);
 		}
 
 		if (maxOccurs < -1 || maxOccurs > 1) {
-			String errMsg = "maxOccurs must either be -1, 0 or 1 but it was: " + maxOccurs;
+			String errMsg = "maxOccurs must either be -1, 0 or 1 but it was: "
+					+ maxOccurs;
 			LOG.error(errMsg);
 			throw new IllegalArgumentException(errMsg);
 		}
@@ -324,7 +331,7 @@ public class ProtomakEngineHelper {
 			} else {
 				retValue = MessageAttributeOptionalType.REPEATED;
 			}
-		} else { //minOccurs = 1
+		} else { // minOccurs = 1
 
 			if (maxOccurs == 1) {
 				retValue = MessageAttributeOptionalType.REQUIRED;
@@ -337,7 +344,7 @@ public class ProtomakEngineHelper {
 		return retValue;
 	}
 
-	//------------------->> Private methods
+	// ------------------->> Private methods
 
 	// ------------------->> Getters / Setters
 
@@ -375,13 +382,15 @@ public class ProtomakEngineHelper {
 			throw new IllegalArgumentException(errMsg);
 		}
 
-		//E.g. ".foo"
-		if (targetNameSpace.startsWith(".") && !targetNameSpace.startsWith("..")) {
+		// E.g. ".foo"
+		if (targetNameSpace.startsWith(".")
+				&& !targetNameSpace.startsWith("..")) {
 			targetNameSpace = targetNameSpace.substring(1);
 		}
 
 		if (Character.isDigit(targetNameSpace.charAt(0))) {
-			errMsg = "The target name space: " + targetNameSpace + " cannot start with a digit";
+			errMsg = "The target name space: " + targetNameSpace
+					+ " cannot start with a digit";
 			LOG.error(errMsg);
 			throw new IllegalArgumentException(errMsg);
 		}
@@ -393,6 +402,9 @@ public class ProtomakEngineHelper {
 
 		try {
 			uri = new URI(targetNameSpace);
+			if (uri.isOpaque()) {
+				uri = new URI(ProtomakEngineConstants.PROTOMAK_DEFAULT_PACKAGE_NAME);
+			}
 		} catch (URISyntaxException e) {
 			errMsg = "The specified target namespace: " + targetNameSpace
 					+ " does not seem to be a valid URI";
@@ -417,15 +429,17 @@ public class ProtomakEngineHelper {
 	 * @return A name for an anonymous type, guaranteeing that it is unique per
 	 *         proto file.
 	 */
-	public static String getMessageTypeName(String candidateName, String inputPath) {
+	public static String getMessageTypeName(String candidateName,
+			String inputPath) {
 
-		//Guarantees multi-threading support
-		inputPath = inputPath.replace('\\', '/');//I prefer a normalised URL
+		// Guarantees multi-threading support
+		inputPath = inputPath.replace('\\', '/');// I prefer a normalised URL
 		String capitalisedName = capitaliseString(candidateName);
 		String key = inputPath + capitalisedName;
 		String retValue = ANONYMOUS_TYPES_CACHE.get(key);
 		if (retValue == null) {
-			String added = ANONYMOUS_TYPES_CACHE.putIfAbsent(key, capitalisedName);
+			String added = ANONYMOUS_TYPES_CACHE.putIfAbsent(key,
+					capitalisedName);
 			if (added != null) {
 				retValue = added;
 			} else {
@@ -451,17 +465,18 @@ public class ProtomakEngineHelper {
 		return retValue;
 	}
 
-	//------------------->> equals() / hashcode() / toString()
+	// ------------------->> equals() / hashcode() / toString()
 
 	/**
 	 * @param retValue
 	 * @return
 	 */
 	public static String capitaliseString(String retValue) {
-		retValue = Character.toUpperCase(retValue.charAt(0)) + retValue.substring(1);
+		retValue = Character.toUpperCase(retValue.charAt(0))
+				+ retValue.substring(1);
 		return retValue;
 	}
 
-	//------------------->> Inner classes
+	// ------------------->> Inner classes
 
 }

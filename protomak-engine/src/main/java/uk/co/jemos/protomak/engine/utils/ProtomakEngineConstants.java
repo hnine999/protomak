@@ -16,7 +16,7 @@ import uk.co.jemos.xsds.protomak.proto.MessageType;
  */
 public class ProtomakEngineConstants {
 
-	//------------------->> Constants
+	// ------------------->> Constants
 
 	public static final Comparator<MessageType> MESSAGE_TYPE_COMPARATOR = new Comparator<MessageType>() {
 
@@ -28,7 +28,8 @@ public class ProtomakEngineConstants {
 
 	public static final Comparator<MessageAttributeType> MESSAGE_ATTRIBUTE_COMPARATOR = new Comparator<MessageAttributeType>() {
 
-		public int compare(MessageAttributeType msgAttrType1, MessageAttributeType msgAttrType2) {
+		public int compare(MessageAttributeType msgAttrType1,
+				MessageAttributeType msgAttrType2) {
 			return msgAttrType1.getName().compareTo(msgAttrType2.getName());
 		}
 
@@ -83,7 +84,10 @@ public class ProtomakEngineConstants {
 
 	public static final String XSD_EXTENSION = ".xsd";
 
-	//------------------->> Constructor
+	/** The default package if the URI results to be opaque */
+	public static final String PROTOMAK_DEFAULT_PACKAGE_NAME = "protomak_default_package";
+
+	// ------------------->> Constructor
 
 	/** Non instantiable contructor */
 	private ProtomakEngineConstants() {
