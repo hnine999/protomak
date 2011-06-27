@@ -63,7 +63,7 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 	private ErrorHandler errorHandler = new ProtomakErrorHandler();
 
 	/** The XSOM Schema parser */
-	private XSOMParser parser;
+	private XSOMParser parser = new XSOMParser();
 
 	// ------------------->> Constructors
 
@@ -122,10 +122,6 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 		try {
 
 			LOG.debug("Is parser null? " + parser == null);
-
-			if (parser == null) {
-				parser = new XSOMParser();
-			}
 
 			parser.setErrorHandler(errorHandler);
 

@@ -119,12 +119,22 @@ public class ProtomakEngineHelperUnitTest {
 	}
 
 	@Test
-	public void testPackageNameWithUrnInNamespace() {
+	public void testPackageNameFromOpaqueUri() {
 
 		String expectedPackageName = ProtomakEngineConstants.PROTOMAK_DEFAULT_PACKAGE_NAME
 				+ ";";
 
 		String packageName = "urn:com/example/test";
+		this.checkOpaqueUrlMatches(expectedPackageName, packageName);
+		packageName = "mailto:foo@bar.baz";
+		this.checkOpaqueUrlMatches(expectedPackageName, packageName);
+		packageName = "news:comp.lang.java";
+		this.checkOpaqueUrlMatches(expectedPackageName, packageName);
+
+	}
+
+	private void checkOpaqueUrlMatches(String expectedPackageName,
+			String packageName) {
 		String actualPackageName = ProtomakEngineHelper
 				.convertTargetNsToProtoPackageName(packageName);
 		Assert.assertNotNull("The actual package name cannot be null!",
@@ -135,7 +145,6 @@ public class ProtomakEngineHelperUnitTest {
 		Assert.assertEquals(
 				"The actual and expected package names don't match",
 				expectedPackageName, actualPackageName);
-
 	}
 
 	@Test
