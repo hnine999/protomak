@@ -254,6 +254,20 @@ public class XsdToProtoDomainUnitTest {
 
 	}
 
+	@Test
+	public void testTopElementWithAnonymousComplexTypeWithChildrenBugPmk32() throws Exception {
+
+		service.generateProtoFiles(
+				ProtomakEngineTestConstants.TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_WITH_CHILDREN_PATH,
+				ProtomakEngineTestConstants.PROTOS_OUTPUT_DIR);
+
+		String protoFileName = ProtomakEngineHelper
+				.extractProtoFileNameFromXsdName(ProtomakEngineTestConstants.TOP_LEVEL_ELEMENT_WITH_ANONYMOUS_COMPLEX_TYPE_WITH_CHILDREN_NAME);
+
+		this.verifyExpectedAndActualProto(protoFileName);
+
+	}
+	
 	@Test(expected = ProtomakXsdToProtoConversionError.class)
 	public void testInvalidSchemaParsing() throws Exception {
 

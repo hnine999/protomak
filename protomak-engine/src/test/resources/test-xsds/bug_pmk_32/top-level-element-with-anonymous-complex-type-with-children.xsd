@@ -4,7 +4,14 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="Example">
 		<xs:complexType>
+			<xs:sequence>
+					<xs:element name="child1" type="type1"/>
+					<xs:element name="child2" type="type2"/>
+				</xs:sequence>
 			<xs:attribute name="id" type="xs:long" use="required" />
 		</xs:complexType>
 	</xs:element>
+	
+	<xs:complexType name="type1"></xs:complexType>
+	<xs:complexType name="type2"></xs:complexType>
 </xs:schema> 
