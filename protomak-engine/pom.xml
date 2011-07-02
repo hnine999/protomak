@@ -4,24 +4,24 @@
 
 	<parent>
 		<groupId>uk.co.jemos.protomak</groupId>
-		<artifactId>protomak-parent</artifactId> 
+		<artifactId>protomak-parent</artifactId>
 		<version>0.0.3-SNAPSHOT</version>
 	</parent>
 
 
 	<groupId>uk.co.jemos.protomak</groupId>
-	<artifactId>protomak-engine</artifactId>	
+	<artifactId>protomak-engine</artifactId>
 	<packaging>jar</packaging>
 
 	<name>protomak-engine</name>
 	<description>This is PROTOMAK engine to convert integration technology files such as XML and Jonas into .proto files</description>
 	<url>http://www.jemos.eu/projects/protomak/index.html</url>
-	
+
 	<distributionManagement>
-	  <site>
-	    <id>www.jemos.eu/protomak</id>
-	    <url>scp://tedonema@ubuntu/home/tedonema/runtime/www/projects/protomak/protomak-engine</url>
-	  </site>
+		<site>
+			<id>www.jemos.eu/protomak</id>
+			<url>scp://tedonema@ubuntu/home/tedonema/runtime/www/projects/protomak/protomak-engine</url>
+		</site>
 	</distributionManagement>
 
 	<build>
@@ -33,6 +33,19 @@
 				<configuration>
 					<source>1.5</source>
 					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>uk.co.jemos.protomak.ProtomakLauncher</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -79,7 +92,7 @@
 				<executions>
 					<execution>
 						<id>assembly-project</id>
-						<phase>deploy</phase>
+						<phase>install</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
@@ -87,15 +100,16 @@
 				</executions>
 				<configuration>
 					<archive>
-                    	<manifest>
-                    		 <addClasspath>true</addClasspath>                    		
-                        	<mainClass>uk.co.jemos.protomak.Main</mainClass>
-                    	</manifest>
-                	</archive>					
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>uk.co.jemos.protomak.Main</mainClass>
+						</manifest>
+					</archive>
 					<outputDirectory>${project.build.directory}/site/downloads</outputDirectory>
 					<descriptors>
 						<descriptor>src/main/assembly/project.xml</descriptor>
 						<descriptor>src/main/assembly/bin.xml</descriptor>
+						<descriptor>src/main/assembly/executable.xml</descriptor>
 					</descriptors>
 				</configuration>
 			</plugin>

@@ -10,7 +10,7 @@ import uk.co.jemos.protomak.engine.impl.*;
  * <p>
  * Valid arguments can be obtained with the -? argument.
  */
-public final class Main {
+public final class ProtomakLauncher {
 	
 	public static void main( String[] args ) {
 	    // create the parser
