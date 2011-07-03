@@ -20,7 +20,7 @@
 	<distributionManagement>
 		<site>
 			<id>www.jemos.eu/protomak</id>
-			<url>scp://tedonema@ubuntu/home/tedonema/runtime/www/projects/protomak/protomak-engine</url>
+			<url>scp://tedonema@nethaniel/home/tedonema/runtime/www/projects/protomak/protomak-engine</url>
 		</site>
 	</distributionManagement>
 
