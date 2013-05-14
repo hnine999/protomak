@@ -241,14 +241,23 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
 				LOG.debug("Skipping anyType: " + complexType.getName());
 				continue;
 			}
-			if (null == proto.getPackage()) {
+            
+            if (null == proto.getPackage()) {
+                final String packageName;
+                final String targetNamespace = complexType.getTargetNamespace();
+                if (targetNamespace == null) {
+                    packageName = "foo";
+                }
+                else if (targetNamespace.isEmpty()) {
+                    packageName = "foo";
+                } else {
+                    packageName = ProtomakEngineHelper
+                            .convertTargetNsToProtoPackageName(targetNamespace);
+                }
+                LOG.info("Proto package will be: " + packageName);
+                proto.setPackage(packageName);
 
-				String packageName = ProtomakEngineHelper
-						.convertTargetNsToProtoPackageName(complexType
-								.getTargetNamespace());
-				LOG.info("Proto package will be: " + packageName);
-				proto.setPackage(packageName);
-			}
+            }
 			LOG.debug("Processing complex type: " + complexType.getName());
 			complexTypeProcessor.processComplexType(protoMessages, complexType,
 					inputPath);

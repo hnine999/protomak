@@ -313,14 +313,14 @@ public class ProtomakEngineHelper {
 			String errMsg = "minOccurs must either be 0 or 1 but it was: "
 					+ minOccurs;
 			LOG.error(errMsg);
-			throw new IllegalArgumentException(errMsg);
+			// throw new IllegalArgumentException(errMsg);
 		}
 
 		if (maxOccurs < -1 || maxOccurs > 1) {
 			String errMsg = "maxOccurs must either be -1, 0 or 1 but it was: "
 					+ maxOccurs;
 			LOG.error(errMsg);
-			throw new IllegalArgumentException(errMsg);
+			// throw new IllegalArgumentException(errMsg);
 		}
 
 		MessageAttributeOptionalType retValue = null;
@@ -373,7 +373,7 @@ public class ProtomakEngineHelper {
 		if (null == targetNameSpace || "".equals(targetNameSpace)) {
 			errMsg = "Target name space cannot be null or empty";
 			LOG.error(errMsg);
-			throw new IllegalArgumentException(errMsg);
+			//throw new IllegalArgumentException(errMsg);
 		}
 
 		if (targetNameSpace.endsWith(".")) {
