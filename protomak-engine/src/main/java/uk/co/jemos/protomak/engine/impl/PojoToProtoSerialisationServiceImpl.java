@@ -234,7 +234,7 @@ public class PojoToProtoSerialisationServiceImpl implements ProtoSerialisationSe
 				.append(ProtomakEngineConstants.WHITE_SPACE)
 				.append(messageAttribute.getRuntimeType().getCustomType() != null ? messageAttribute
 						.getRuntimeType().getCustomType() : messageAttribute.getRuntimeType()
-						.getProtoType().name().toLowerCase())
+						.getProtoType().value().toLowerCase())
 				.append(ProtomakEngineConstants.WHITE_SPACE).append(messageAttribute.getName())
 				.append(ProtomakEngineConstants.WHITE_SPACE).append("= ")
 				.append(messageAttribute.getIndex()).append(";")
