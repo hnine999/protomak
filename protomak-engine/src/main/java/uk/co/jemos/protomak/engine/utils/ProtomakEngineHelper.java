@@ -242,15 +242,15 @@ public class ProtomakEngineHelper {
 	public static String convertTargetNsToProtoPackageName(
 			String targetNameSpace) {
 
-		URI uri = getNormalisedUri(targetNameSpace);
+		final URI uri = getNormalisedUri(targetNameSpace);
 
-		String authority = uri.getAuthority();
+		final String authority = uri.getAuthority();
 
-		List<String> packageTokens = new ArrayList<String>();
+		final List<String> packageTokens = new ArrayList<String>();
 
 		if (authority != null) {
 			// Reverses the authority to form the package name
-			String[] authorityTokens = uri.getHost().split("\\.");
+			final String[] authorityTokens = uri.getHost().split("\\.");
 			for (int i = authorityTokens.length - 1; i >= 0; i--) {
 				packageTokens.add(authorityTokens[i]);
 			}
@@ -265,21 +265,21 @@ public class ProtomakEngineHelper {
 				path = path.substring(idx + 3);
 			}
 
-			String[] pathTokens = path.split("/");
+			final String[] pathTokens = path.split("/");
 			if (pathTokens != null && pathTokens.length > 0) {
 				for (String pathToken : pathTokens) {
 					if (pathToken.equals("")) {
 						continue;
 					}
-					packageTokens.add(0, pathToken);
+					packageTokens.add(pathToken);
 				}
 			} else {
-				packageTokens.add(0, path);
+				packageTokens.add(path);
 			}
 
 		}
 
-		StringBuilder buff = new StringBuilder();
+		final StringBuilder buff = new StringBuilder();
 
 		for (int i = 0; i < packageTokens.size(); i++) {
 			buff.append(packageTokens.get(i));

@@ -36,7 +36,7 @@ public class ProtomakEngineHelperUnitTest {
 	@Test
 	public void testTargetNsToProtoPackageConversion() {
 
-		String expectedPackageName = "simple_one_level.eu.jemos.www;";
+		String expectedPackageName = "eu.jemos.www.simple_one_level;";
 
 		String packageName = ProtomakEngineHelper
 				.convertTargetNsToProtoPackageName(ProtomakEngineTestConstants.TEST_TARGET_NAMESPACE_WITH_HTTP_PREFIX);
@@ -62,7 +62,7 @@ public class ProtomakEngineHelperUnitTest {
 
 	@Test
 	public void testTargetNsToProtoPackageConversionWithSimpleNameWithSlashes() {
-		String expectedPackageName = "baz.bar.foo";
+		String expectedPackageName = "foo.bar.baz";
 		String packageName = ProtomakEngineHelper
 				.convertTargetNsToProtoPackageName("foo/bar/baz");
 		this.verifyPackageName(expectedPackageName + ";", packageName);
@@ -99,7 +99,7 @@ public class ProtomakEngineHelperUnitTest {
 	@Test
 	public void testTargetNsWithUpperCasesToProtoPackageConversion() {
 
-		String expectedPackageName = "foo.eu.jemos.www;";
+		String expectedPackageName = "eu.jemos.www.foo;";
 
 		String packageName = ProtomakEngineHelper
 				.convertTargetNsToProtoPackageName(ProtomakEngineTestConstants.TEST_TARGET_NAMESPACE_WITH_HTTP_PREFIX_AND_SOME_UPPERCASE);
@@ -110,7 +110,7 @@ public class ProtomakEngineHelperUnitTest {
 	@Test
 	public void testTargetNsWithRelativeUrl() {
 
-		String expectedPackageName = "my_namespace.baz.bar.foo;";
+		String expectedPackageName = "foo.bar.baz.my_namespace;";
 
 		String packageName = ProtomakEngineHelper
 				.convertTargetNsToProtoPackageName(ProtomakEngineTestConstants.TEST_TARGET_NAMESPACE_WITH_RELATIVE_URL);
