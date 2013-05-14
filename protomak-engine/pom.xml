@@ -145,6 +145,44 @@
 					</plugins>
 				</configuration>
 			</plugin>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-shade-plugin</artifactId>
+	            <version>1.4</version>
+	            <executions>
+	                <execution>
+	                    <phase>package</phase>
+	                    <goals>
+	                        <goal>shade</goal>
+	                    </goals>
+	                    <configuration>
+	                        <transformers>
+	                            <transformer
+	                                implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+	                                <!-- Main class -->
+	                                <mainClass>uk.co.jemos.protomak.ProtomakLauncher</mainClass>
+	                            </transformer>
+	                            <transformer 
+	                                 implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+	                                <resource>properties.properties</resource>
+	                            </transformer>
+	                            <transformer
+	                                implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+	                                <resource>applicationContext.xml</resource>
+	                            </transformer>
+	                            <transformer
+	                                implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+	                                <resource>META-INF/cxf/cxf.extension</resource>
+	                            </transformer>
+	                            <transformer
+	                                implementation="org.apache.maven.plugins.shade.resource.XmlAppendingTransformer">
+	                                <resource>META-INF/cxf/bus-extensions.xml</resource>
+	                            </transformer>
+	                     </transformers>
+	                    </configuration>
+	                </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -177,7 +215,7 @@
 			<version>0.6.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
+			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
 		</dependency>
