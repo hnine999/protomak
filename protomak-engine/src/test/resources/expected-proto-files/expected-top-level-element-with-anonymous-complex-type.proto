@@ -4,6 +4,6 @@
 package com.example;
 
 message Example {
-	required sfixed_64 id = 1;
+	required sfixed64 id = 1;
 }
 

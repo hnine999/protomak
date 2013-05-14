@@ -13,7 +13,7 @@ message ProductType {
 		B = 2;
 		C = 3;
 	}
-	required sfixed_32 number = 1;
+	required sfixed32 number = 1;
 	required ABC abc = 2;
 	optional date effectiveDate = 3;
 }

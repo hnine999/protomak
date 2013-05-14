@@ -53,7 +53,7 @@ Elements to messages
 	}
 	
 	message IntElement {
-			required sfixed_32 intElement = 1;
+			required sfixed32 intElement = 1;
 	}
 +--------------------------------------------
 

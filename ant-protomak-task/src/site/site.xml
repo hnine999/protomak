@@ -22,7 +22,7 @@
       
       <menu name="Protomak modules" inherit="top">
       	<item name="Protomak Engine" href="../protomak-engine/index.html" />
-      	<item name="Protomak Maven Plugin" href="../maven-protomak-plugin/index.html" />
+      	<item name="Protomak Maven Plugin" href="../protomak-maven-plugin/index.html" />
       	<item name="Ant Protomak Task" href="../ant-protomak-task/index.html" />
       </menu>
       

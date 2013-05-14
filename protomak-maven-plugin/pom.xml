@@ -9,10 +9,10 @@
 	</parent>
 
 	<groupId>uk.co.jemos.maven.plugins</groupId>
-	<artifactId>maven-protomak-plugin</artifactId>
+	<artifactId>protomak-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
 
-	<name>maven-protomak-plugin</name>
+	<name>protomak-maven-plugin</name>
 	<url>http://maven.apache.org</url>
 
 
@@ -20,7 +20,7 @@
 	<distributionManagement>
 	  <site>
 	    <id>www.jemos.eu/protomak</id>
-	    <url>scp://tedonema@nethaniel/home/tedonema/runtime/www/projects/protomak/maven-protomak-plugin</url>
+	    <url>scp://tedonema@nethaniel/home/tedonema/runtime/www/projects/protomak/protomak-maven-plugin</url>
 	  </site>
 	</distributionManagement>	
 

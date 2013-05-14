@@ -35,17 +35,17 @@ Podam Downloads
 * Maven Protomak Plugin  
 
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries zip | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-project.zip} maven-protomak-plugin-0.0.2.RELEASE-project.zip}} |
+| Binaries zip | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-project.zip} protomak-maven-plugin-0.0.2.RELEASE-project.zip}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-project.tar.gz} maven-protomak-plugin-0.0.2.RELEASE-project.tar.gz}} |
+| Binaries tag.gz | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-project.tar.gz} protomak-maven-plugin-0.0.2.RELEASE-project.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-project.tar.bz2} maven-protomak-plugin-0.0.2.RELEASE-project.tar.bz2}} |
+| Binaries bz2 | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-project.tar.bz2} protomak-maven-plugin-0.0.2.RELEASE-project.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries zip | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-bin.zip} maven-protomak-plugin-0.0.2.RELEASE-bin.zip}} |
+| Binaries zip | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-bin.zip} protomak-maven-plugin-0.0.2.RELEASE-bin.zip}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries tag.gz | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-bin.tar.gz} maven-protomak-plugin-0.0.2.RELEASE-bin.tar.gz}} |
+| Binaries tag.gz | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-bin.tar.gz} protomak-maven-plugin-0.0.2.RELEASE-bin.tar.gz}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
-| Binaries bz2 | {{{./maven-protomak-plugin/downloads/maven-protomak-plugin-0.0.2.RELEASE-bin.tar.bz2} maven-protomak-plugin-0.0.2.RELEASE-bin.tar.bz2}} |
+| Binaries bz2 | {{{./protomak-maven-plugin/downloads/protomak-maven-plugin-0.0.2.RELEASE-bin.tar.bz2} protomak-maven-plugin-0.0.2.RELEASE-bin.tar.bz2}} |
 *----------------+-------------------------------------------------------------------------------------------------------+
 
 * Ant Protomak Task  
@@ -77,7 +77,7 @@ Podam Downloads
   
 ** Maven Protomak Plugin
 
-  {{{./maven-protomak-plugin/downloads/} For older releases click here}}
+  {{{./protomak-maven-plugin/downloads/} For older releases click here}}
   
 ** Ant Protomak Task
 

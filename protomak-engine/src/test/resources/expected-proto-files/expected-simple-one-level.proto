@@ -6,9 +6,9 @@ package simple_one_level.eu.jemos.www;
 message ClientType {
 	required bool active = 1;
 	required string firstName = 2;
-	required sfixed_32 id = 3;
+	required sfixed32 id = 3;
 	required string lastsName = 4;
-	required sfixed_32 phoneNumber = 5;
+	required sfixed32 phoneNumber = 5;
 }
 
 message ClientsType {

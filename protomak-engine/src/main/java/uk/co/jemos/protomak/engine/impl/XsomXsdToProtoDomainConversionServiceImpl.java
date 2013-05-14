@@ -246,10 +246,10 @@ public class XsomXsdToProtoDomainConversionServiceImpl implements
                 final String packageName;
                 final String targetNamespace = complexType.getTargetNamespace();
                 if (targetNamespace == null) {
-                    packageName = "foo";
+                    packageName = "protomak.null";
                 }
                 else if (targetNamespace.isEmpty()) {
-                    packageName = "foo";
+                    packageName = "protomak.empty";
                 } else {
                     packageName = ProtomakEngineHelper
                             .convertTargetNsToProtoPackageName(targetNamespace);

@@ -42,11 +42,11 @@ $ mvn protomak:xsd-to-proto -DinputXsdFile=<path-to-input-xsd> -DoutputFolder=<p
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>uk.co.jemos.test</groupId>
-  <artifactId>maven-protomak-plugin-test</artifactId>
+  <artifactId>protomak-maven-plugin-test</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>maven-protomak-plugin-test</name>
+  <name>protomak-maven-plugin-test</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -57,7 +57,7 @@ $ mvn protomak:xsd-to-proto -DinputXsdFile=<path-to-input-xsd> -DoutputFolder=<p
     <plugins>
       <plugin>
         <groupId>uk.co.jemos.maven.plugins</groupId>
-        <artifactId>maven-protomak-plugin</artifactId>
+        <artifactId>protomak-maven-plugin</artifactId>
         <version>0.0.1.RELEASE</version>
         <executions>
           <execution>
